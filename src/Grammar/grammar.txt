@@ -1,0 +1,59 @@
+parser grammar BrainWave;
+
+prog
+    : statements EOI
+    ;
+
+statements
+    : statement (statement)*
+    ;
+
+statement
+    : declareStatement SEMI
+    | ExprStatement SEMI
+    | ReadStatement SEMI
+    ;
+declareStatement
+    : (IDENTIFIER | assignExpr)
+    ;
+
+exprStatement
+    : assignExpr SEMI
+    | boolExpr SEMI
+    ;
+
+assignExpr
+    : IDENTIFIER ( EQUAL | PLUSEQUAL | MINUSEQUAL ) expr
+    ;
+
+boolExpr
+    : expr
+    | expr (EQ|NEQ|LESS|LEQ|GREATER|GEQ)? expr
+    ;
+
+expr
+    : termExpr PLUS expr
+    | termExpr MINUS expr
+    | termExpr
+    ;
+
+termExpr
+    : unaryExpr STAR termExpr
+    | unaryExpr
+    ;
+
+unaryExpr
+    : MINUS grouping
+    | grouping
+    ;
+
+grouping
+    : L_PAREN logicalExpr R_PAREN
+    | baseExpr
+    ;
+
+baseExpr
+    | IDENTIFIER
+    | INTEGER_LITERAL
+    ;
+

@@ -1,0 +1,21 @@
+# Build directories
+build/
+cmake-build-*/
+
+# Compiled Outputs
+*.o
+*.so
+*.a
+*.exe
+calc
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+
+# Editor files
+*.swp
+*~
+EOF
