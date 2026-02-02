@@ -24,6 +24,6 @@ Then, it is nice to have some methods to handle the current token. We may skip o
 
 To actually parse, we have a parse method for each statement or expression defined in our grammar. We also create some error methods to make error reporting a little easier to read in the implementation.
 
-View the parser implementation README [here](/src/lib/Parser/Parser.cpp)
+View the parser implementation README [here](/src/lib/Parser/README.md)
 
 Go back to the main README [here](/README.md)
