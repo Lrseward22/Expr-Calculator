@@ -34,3 +34,6 @@ As mentioned earlier, LLVM provides a way to obtain the line and column number i
 We also use LLVMs replacement of `std::string` known as `llvm::StringRef`. These are simply just non-owning references to strings. The benefit of using StringRefs are that they are extremely cheap to pass around as they are basically just a pointer. We utilize StringRefs in the Token class to obtain the lexeme of tokens. 
 
 Lastly, Tokens contain methods to determine if a given token is of a certain type. This becomes useful when organizing the tokens into abstract syntax trees.
+
+View the implementation of the Utils modules [here](/src/lib/Utils/README.md)
+Go back to the main README [here](/README.md)
