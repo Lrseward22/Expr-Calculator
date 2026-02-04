@@ -38,7 +38,7 @@ For more information:
 [click here for the Lexer implementation](src/lib/Lexer/README.md)
 
 ### Parser
-The parser takes in the tokens generated from the lexer and organizes them into abstract syntax trees.
+The parser takes in the tokens generated from the lexer and organizes them into abstract syntax trees. Then it conducts basic semantic analysis.
 
 For more information:
 
@@ -47,7 +47,7 @@ For more information:
 [click here for the Parser implementation](src/lib/Parser/README.md)
 
 ### Generator
-In this expression language, the generator performs basic semantic analysis as well as emitting LLVM Intermediate Representation (IR).
+In this expression language, the generator emits LLVM Intermediate Representation (IR).
 
 For more information:
 
