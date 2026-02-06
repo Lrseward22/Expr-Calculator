@@ -1,7 +1,7 @@
 # Generator
 
-The first thing to notice is that our generator only had one method `CodeGen::Compile`. 
-We need more machinery to actually discern and emit proper LLVM Intermediate Representation (IR). 
+The first thing to notice is that our generator only had one method, `CodeGen::Compile`. 
+We need more machinery in our implementation [CodeGen.cpp](/src/lib/Generator/CodeGen.cpp) to actually discern and emit proper LLVM Intermediate Representation (IR). 
 IR is a language more akin to a mix between assembly and C. The benefits of IR are expansive. 
 The benefits that concern us are that IR is extremely easy to optimize and IR is less architecture specific. 
 That is, the same IR can be used for x86 architectures or ARM architectures with some limitations. 
@@ -10,7 +10,7 @@ The IR is the middle stage and is typically where optimization occurs.
 LLVM handles optimization and the back-end (producing an actual assembly or machine code file). 
 
 But how does the front-end we have been creating actually emit this IR? 
-Remember the AST visitor class we defined in the [AST header](src/include/calc/Parser/AST.h)? 
+Remember the AST visitor class we defined in [AST.h](/src/include/calc/Parser/AST.h)? 
 We can utilize this as the actual machine the code generator levies to generate the IR. 
 As a side note, for larger compilers, Semantic Analysis is an additional step that also utilizes this visitor class. 
 So, we define an extension of our `ASTVisitor` class that will employ another vital built-in from LLVM, the `llvm::IRBuilder` class.
@@ -38,7 +38,7 @@ Again, this is useful for optimization.
 An interesting consequence is the value of variable being dependent on the path of the code.
 For example if you implement if structures as an expression:
 ```
-  x = if y > 0 then x = y else x = -y;
+  x = if y > 0 then y else -y;
 ```
 This is solved through PHI instructions which determine a values variable based on the last Basic Block executed.
 They aren't important for this language, so this is as deep as I will explain them.
@@ -64,5 +64,5 @@ Similarly, the data layout is some more metadata that determines how the instruc
 
 
 
-
+View the implementation at [CodeGen.cpp](/src/lib/Generator/CodeGen.cpp)
 View the main README [here](/README.md)
