@@ -8,5 +8,6 @@ Now we check if the buffer currently points to an alphabetic character. If so, w
 If the buffer points to a digit initially, we know the token must be an integer literal. Again, it is left to the reader to determine how to check for float literals. 
 If the buffer points to another character, we must check if it is any of our punctuators. Due to the inconsistency of punctuators being one or two characters, I determined it is easiest to manually check every punctuator and form the corresponding token.
 
+View [Lexer.cpp](/src/lib/Lexer/Lexer.cpp)
 
 View the main README [here](/README.md)
