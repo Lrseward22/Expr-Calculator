@@ -1,7 +1,7 @@
 # Parser
 
 ## AST definitions
-We define Abstract Syntax Trees (AST) along with the parser. We define the visitor along with ASTs where we have an abstract method for each AST.
+We define Abstract Syntax Trees (AST) along with the parser in [AST.h](/src/include/calc/Parser/AST.h). We define the visitor along with ASTs where we have an abstract method for each AST.
 
 For a simple expression language, we must have an AST for each type of expression and for our three types of statements: expression statements, variable declarations and read statements.
 
@@ -14,7 +14,7 @@ Our read statement also only holds an identifier of the variable that we want to
 Then, generally, our ASTs have methods of accessing children ASTs, visit methods, and a helpful print method for debugging.
 
 ## Parser interface
-The Parser interface is more extensive than the Lexer's. The Parser has ownership of the Lexer so it can obtain more tokens as necessary. It also stores the current token and a `llvm::SmallVector` of declared identifiers.
+The Parser interface is more extensive than the Lexer's as seen in [Parser.h](/src/include/calc/Parser/Parser.h). The Parser has ownership of the Lexer so it can obtain more tokens as necessary. It also stores the current token and a `llvm::SmallVector` of declared identifiers.
 
 Since the Lexer already has the diagnostics engine, the parser need only access the Lexer's diagnostic engine. 
 
