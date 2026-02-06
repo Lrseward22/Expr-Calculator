@@ -1,6 +1,6 @@
 # Utils Implementations
 ## Diagnostics Engine
-The only parts of the implementation for [Diagnostics.cpp](/src/lib/Utils/Diagnostics.cpp) that remain are the ways to access the text and kind associated with an diagnostic name.
+The only parts of the implementation for [Diagnostics.cpp](/src/lib/Utils/Diagnostics.cpp) that remains is the way to access the text and kind associated with an diagnostic name.
 
 To acheive this functionality, we define a macro for each that create an array with the Diagnostics enum ID as the index. Then, we only need to index the array at the enum ID for the diagnostic.
 
