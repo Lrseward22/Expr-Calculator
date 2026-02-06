@@ -6,4 +6,6 @@ The main difference is to ensure that you are moving ownership of unique pointer
 
 In just an expression language, semantic analysis is limited. Thus, it makes sense to perform it during the parsing stage. We simply hold a `llvm::StringMap` as our symbols table. We insert during variable declaration statements and ensure variables are declared in the Map when parsing a variable.
 
+View [Parser.cpp](/src/lib/Parser/Parser.cpp)
+
 View the main README [here](/README.md)
