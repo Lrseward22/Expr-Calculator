@@ -1,5 +1,5 @@
 # Lexer Interface
-Luckily, the lexer interface is very simple. The work comes in with the implementation.
+Luckily, the lexer interface [Lexer.h](/src/include/calc/Lexer/Lexer.h) is very simple. The work comes in with the implementation.
 
 Our Lexer need only contain a source manager (`llvm::SourceMgr`) to access the source files buffer, a buffer to the current position in the source buffer, and our diagnostics engine.
 
