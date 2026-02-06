@@ -2,10 +2,10 @@
 
 ## Diagnostics
 
-### Diagnostics.def
+### [Diagnostics.def](/src/include/calc/Utils/Diagnostics.def)
 In This file, we simply define a macro data table so we can easily add new diagnostics messages and their associated level. With this, it becomes as simple as adding a new entry in this file with a name of the message, the level as error, warning, or note to get LLVM, and the message you want to report.
 
-### Diagnostics.h
+### [Diagnostics.h](/src/include/calc/Utils/Diagnostics.h)
 Here we can utilize the diagnostics data table to create an enum of all our messages to report. We use namespacing, in this case `calc`, to associate the diagnostics engine with all our modules in this project.
 
 LLVM provides a diagnostics system to report messages, so we create a custom interface to manipulate the provided system to our needs. Our diagnostics engine simply provides a way to format our error messages, count the number of errors in a program, and actually report the errors and their corresponding location in the source file.
@@ -16,15 +16,15 @@ This is the first file we also see the `llvm::SmallVector`. LLVM provides lighte
 
 ## Tokens
 
-### TokenKinds.def
+### [TokenKinds.def](/src/include/calc/Utils/TokenKinds.def)
 Similar to Diagnostics.def, this file is a data table for macros. In this case, it defines all the tokens available in the language. We will later see how adding new keywords to the lexing process is simply just adding a new entry in the key words section.
 
 This macro definition file creates the types of tokens and organizes them into general tokens, identifier tokens, literal tokens, punctuator tokens, and key word tokens. This separation can later become useful when determining what properties the token should have.
 
-### TokenKinds.h
+### [TokenKinds.h](/src/include/calc/Utils/TokenKinds.h)
 Here we create the enum to interface with our token definitions. We also provide functions to determine string of characters associated with a token, the name of the token, the token category, and, as mentioned earlier, ways to identify the category of the token.
 
-### Token.h
+### [Token.h](/src/include/calc/Utils/Token.h)
 Here we define what our tokens look like. To hold the lexeme, we only store a pointer to the source buffer and the length of the lexeme. We then store the token kind.
 
 Likely unseen, we define Token as a friend class to the Lexer class. This simply allows the lexer to access private methods and member variables of the Token class. This is helpful due to how intrinsically linked the two classes are.
