@@ -56,7 +56,7 @@ For more information:
 [click here for the Generator implementation](src/lib/Generator/README.md)
 
 ### Driver
-The driver handles command line arguments of our compiler, generates the IR, and culminates in creating the desired compiled output.
+Finally, the driver stitches everything together. The driver handles command line arguments of our compiler, generates the IR, and culminates in creating the desired compiled output.
 
 For more information:
 
