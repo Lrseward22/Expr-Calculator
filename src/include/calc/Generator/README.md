@@ -1,5 +1,5 @@
 # Generator
-Our Generator interface, similar to the Lexer, is very simple. Most of the work is done in the implementation.
+Our Generator interface [CodeGen.h](/src/include/calc/Generator/CodeGen.h), similar to the Lexer, is very simple. Most of the work is done in the implementation.
 
 The Code Generator class stores the parser to obtain the ASTs as needed. It also stores a couple very important LLVM helper classes. First is the `llvm::LLVMContext`. This class hides a lot of work from the front end compiler developer. It ensures types are consistent, constants can be shared in the same storeage if they are identical, various metadata, and other diagnostic handlers. The other LLVM class we store is `llvm::Module`. This is likely the most important abstraction LLVM provides. Getting comfortable with `llvm::Module` will make code generation much easier. The `llvm::Module` owns all global variables, function declarations and definitions, metadata, the target architecture to generate the code for, data layout, and more.
 
