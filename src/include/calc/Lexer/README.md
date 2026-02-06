@@ -7,6 +7,6 @@ On top of that, we only need methods to form the next token and a way peek ahead
 
 It also becomes very helpful to provide methods to obtain the `llvm::SMLoc` of the current pointer and simple way to form tokens.
 
-View the Lexer implementation README [here](/src/lib/Utils/README.md)
+View the Lexer implementation README [here](/src/lib/Lexer/README.md)
 
 Go back to the main README [here](/README.md)
