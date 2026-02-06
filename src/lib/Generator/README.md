@@ -61,8 +61,6 @@ We then have to insert some metadata to the module. IR cannot be completely arch
 The target triple is some information that identifies what architecture the IR will have to be turned into when emitting assembly or machine code.
 Similarly, the data layout is some more metadata that determines how the instruction will be layed out.
 
-
-
-
 View the implementation at [CodeGen.cpp](/src/lib/Generator/CodeGen.cpp)
+
 View the main README [here](/README.md)
